@@ -1,0 +1,27 @@
+## LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.nav
+*.snm
+*.vrb
+*.xdv
+*.dvi
+
+## Editor / OS
+.DS_Store
+Thumbs.db
+*~
+.vscode/
+
+## Copias duplicadas en la raíz de figuras que ya viven en figures/
+/chart_q1.pdf
+/chart_q3.pdf
