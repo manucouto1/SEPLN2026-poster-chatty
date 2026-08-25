@@ -57,6 +57,10 @@
 % emoji trae su propio margen transparente: con 0em el hueco sigue siendo ancho.
 % Con el loro delante (ver \ChattyTitle): -0.20em roza, -0.35em pico sobre la C,
 % -0.50em el loro monta sobre la C y sigue leyéndose, -0.65em la tapa casi entera.
+% Desplazamiento del grupo loro+"Chatty:" respecto al margen izquierdo. Se aplica
+% solo a la primera línea del título, así que loro y letras se mueven juntos y
+% conservan su posición relativa. 1em aqui son ~2.5 cm en el A0 impreso.
+\newcommand{\TitleShift}{0.35em}
 \newcommand{\ParrotGap}{-0.30em}
 \newcommand{\parrotemoji}{\raisebox{-0.1em}{\reflectbox{\includegraphics[height=0.95em]{figures/parrot.pdf}}}}
 
@@ -175,7 +179,7 @@
   \makebox[\linewidth][l]{%
     \hspace{0.2cm}
     \parbox{1.0\linewidth}{\raggedright
-      {\TitleLineA \ChattyTitle}\\[0.2em]
+      {\TitleLineA \hspace*{\TitleShift}\ChattyTitle}\\[0.2em]
       {\TitleLineB A Tool for Building and Evaluating Customizable LLM Assistants}\\[0.4em]
       {\AuthorsLine Manuel Couto-Pintos, Marcos Fernández-Pichel, Mario Ezra Aragón, David Gallego-Conde, and David E. Losada}\\
       {\AffilLine Centro Singular de Investigación en Tecnoloxías Intelixentes (CiTIUS), Universidade de Santiago de Compostela (USC), Spain}\\
