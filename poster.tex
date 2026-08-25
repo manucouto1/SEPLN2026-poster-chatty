@@ -50,6 +50,16 @@
 \newcommand{\AuthorsLine}{\normalsize\sffamily}
 \newcommand{\AffilLine}{\footnotesize\sffamily}
 
+% Anchos de los logos de financiación (banda inferior), como fracción del ancho
+% de la caja. Ojo: baposter compone la página a fontscale=0.31 y la escala x3.23,
+% así que una longitud absoluta (cm) NO es la del A0 impreso; por eso se dimensionan
+% en fracciones de \linewidth. Los valores dan alturas impresas de ~3.8 / 3.5 / 2.4 cm.
+\newcommand{\FundWA}{0.205\linewidth}   % MICIU + Cofinanciado UE + AEI
+\newcommand{\FundWB}{0.147\linewidth}   % Xunta de Galicia
+\newcommand{\FundWC}{0.205\linewidth}   % Cátedra CAMELIA
+\newcommand{\FundGap}{0.055\linewidth}
+\newcommand{\FundLogo}[2]{\raisebox{-0.5\height}{\includegraphics[width=#1]{#2}}}
+
 % Card para figuras con título arriba
 \tcbset{
   figurecard/.style={
@@ -102,7 +112,7 @@
     colframe=black!10,
     boxrule=0.4pt,
     sharp corners=all,
-    left=4pt,right=4pt,top=6pt,bottom=6pt,
+    left=4pt,right=4pt,top=4pt,bottom=4pt,
     boxsep=2pt,
     fonttitle=\bfseries,
     title filled,
@@ -124,7 +134,7 @@
   boxColorOne=white,
   textborder=rounded,
   eyecatcher=false,
-  headerheight=0.14\textheight,
+  headerheight=0.133\textheight,
   headershape=rounded,
   headershade=plain,
   headerfont=\Large\sffamily,
@@ -299,17 +309,17 @@
     \centering
     \begin{tcolorbox}[resultcard, title={Q1 -- Alignment with medical consensus}]
       \centering
-      \includegraphics[width=0.86\linewidth]{figures/chart_q1.pdf}
+      \includegraphics[width=0.70\linewidth]{figures/chart_q1.pdf}
     \end{tcolorbox}
-    \vspace{0.35em}
+    \vspace{0.22em}
     \begin{tcolorbox}[resultcard, title={Q3 -- Relevance \& factuality}]
       \centering
-      \includegraphics[width=0.86\linewidth]{figures/chart_q3.pdf}
+      \includegraphics[width=0.70\linewidth]{figures/chart_q3.pdf}
     \end{tcolorbox}
-    \vspace{0.35em}
+    \vspace{0.22em}
     \begin{tcolorbox}[resultcard, title={Key observations}]
       \small \raggedright
-      \begin{itemize}\itemsep6pt \parskip0pt \parsep0pt \leftskip-0.4cm
+      \begin{itemize}\itemsep4pt \parskip0pt \parsep0pt \leftskip-0.4cm
         \item \textbf{Q1:} the \textbf{Doctor} assistant is the most aligned with medical consensus (\textbf{41/50} correct), highlighting the value of specialized roles.
         \item \textbf{Q2:} all assistants showed perfect comprehension of the questions, regardless of the provided context.
         \item \textbf{Q3:} the \emph{Neutral} role gave more explicit factual information, whereas the \emph{Doctor} tended to short yes/no answers.
@@ -328,12 +338,12 @@
     \noindent
     \begin{minipage}[c]{0.49\linewidth}
       \centering
-      \includegraphics[width=0.62\linewidth]{figures/qr_github.png}\\[3pt]
+      \includegraphics[width=0.56\linewidth]{figures/qr_github.png}\\[3pt]
       {\small Code \& quick start}
     \end{minipage}\hfill
     \begin{minipage}[c]{0.49\linewidth}
       \centering
-      \includegraphics[width=0.62\linewidth]{figures/qr_video.png}\\[3pt]
+      \includegraphics[width=0.56\linewidth]{figures/qr_video.png}\\[3pt]
       {\small Video demo}
     \end{minipage}
   \end{tcolorbox}
@@ -345,7 +355,7 @@
   headerborder=none, textborder=none, boxColorOne=white}{
   \vspace{-0.7cm}
   \begin{center}
-    \includegraphics[width=0.66\linewidth]{figures/sepln2026_logo.png}
+    \includegraphics[width=0.50\linewidth]{figures/sepln2026_logo.png}
   \end{center}
 }
 
@@ -357,7 +367,7 @@
 
   \begin{tcolorbox}[infocard, title={7. Key Findings \& Conclusions}]
     \small
-    \begin{itemize}\itemsep8pt \parskip0pt \parsep0pt \leftskip-0.4cm
+    \begin{itemize}\itemsep4pt \parskip0pt \parsep0pt \leftskip-0.4cm
       \item \textbf{Domain-specific role prompting} (e.g., a medical Doctor role) substantially improves the reliability of AI-generated content.
       \item System-role instructions strongly \textbf{shape model behavior}; the \emph{Neutral} role cites more factual detail, while the \emph{Doctor} tends to short yes/no answers.
       \item The \emph{Liar} role is convincing yet wrong, exemplifying the \textbf{misinformation risk} of advanced generation.
@@ -365,6 +375,20 @@
       \item \textbf{Future work:} adaptive role switching and multilingual capabilities.
     \end{itemize}
   \end{tcolorbox}
+}
+
+% -------------------- FINANCIACIÓN — fila única a todo lo ancho, al pie --------------------
+\headerbox{}{name=funding,span=3,column=0,below=conclusions,
+  headerColorOne=white, headerColorTwo=white, headerFontColor=white,
+  headerborder=none, textborder=none, boxColorOne=white}{
+  \vspace{-1.3cm}
+  \begin{center}
+    \FundLogo{\FundWA}{figures/logo1.png}%
+    \hspace{\FundGap}%
+    \FundLogo{\FundWB}{figures/logo2.png}%
+    \hspace{\FundGap}%
+    \FundLogo{\FundWC}{figures/logo3.png}%
+  \end{center}
 }
 
 \end{poster}
