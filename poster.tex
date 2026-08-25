@@ -50,14 +50,16 @@
 \newcommand{\AuthorsLine}{\normalsize\sffamily}
 \newcommand{\AffilLine}{\footnotesize\sffamily}
 
-% Anchos de los logos de financiación (banda inferior), como fracción del ancho
-% de la caja. Ojo: baposter compone la página a fontscale=0.31 y la escala x3.23,
-% así que una longitud absoluta (cm) NO es la del A0 impreso; por eso se dimensionan
-% en fracciones de \linewidth. Los valores dan alturas impresas de ~3.8 / 3.5 / 2.4 cm.
-\newcommand{\FundWA}{0.205\linewidth}   % MICIU + Cofinanciado UE + AEI
-\newcommand{\FundWB}{0.147\linewidth}   % Xunta de Galicia
-\newcommand{\FundWC}{0.205\linewidth}   % Cátedra CAMELIA
-\newcommand{\FundGap}{0.055\linewidth}
+% Anchos de los logos de financiación (banda inferior), como fracción del ancho de
+% la caja. Ojo: baposter compone la página a fontscale=0.31 y la escala x3.23, así
+% que una longitud absoluta (cm) NO es la del A0 impreso; por eso se dimensionan en
+% fracciones de \linewidth. Suman 0.93: el 0.07 restante son los dos huecos que
+% reparte \hfill, de modo que la fila queda justificada a todo el ancho.
+% Alturas impresas resultantes: ~4.9 / 4.3 / 4.0 cm. La 3 lleva más ancho que las
+% otras porque su marca es más apaisada y, a igual altura, se vería más pequeña.
+\newcommand{\FundWA}{0.319\linewidth}   % MICIU + Cofinanciado UE + AEI
+\newcommand{\FundWB}{0.228\linewidth}   % Xunta de Galicia
+\newcommand{\FundWC}{0.383\linewidth}   % Cátedra CAMELIA
 \newcommand{\FundLogo}[2]{\raisebox{-0.5\height}{\includegraphics[width=#1]{#2}}}
 
 % Card para figuras con título arriba
@@ -91,7 +93,7 @@
     colframe=black!12,
     boxrule=0.4pt,
     arc=6pt,
-    left=4pt, right=4pt, top=10pt, bottom=8pt,
+    left=4pt, right=4pt, top=7pt, bottom=5pt,
     fonttitle=\bfseries\sffamily,
     attach boxed title to top left={yshift=-2.0mm, xshift=0.6em},
     halign title=left,
@@ -381,14 +383,12 @@
 \headerbox{}{name=funding,span=3,column=0,below=conclusions,
   headerColorOne=white, headerColorTwo=white, headerFontColor=white,
   headerborder=none, textborder=none, boxColorOne=white}{
-  \vspace{-1.3cm}
-  \begin{center}
-    \FundLogo{\FundWA}{figures/logo1.png}%
-    \hspace{\FundGap}%
-    \FundLogo{\FundWB}{figures/logo2.png}%
-    \hspace{\FundGap}%
+  \vspace{-1.15cm}
+  {\parindent0pt
+    \FundLogo{\FundWA}{figures/logo1.png}\hfill
+    \FundLogo{\FundWB}{figures/logo2.png}\hfill
     \FundLogo{\FundWC}{figures/logo3.png}%
-  \end{center}
+    \par}
 }
 
 \end{poster}

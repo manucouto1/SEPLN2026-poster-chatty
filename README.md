@@ -50,10 +50,14 @@ Universidades / Agencia Estatal de Investigación (cofinanciado por la Unión Eu
 (Consellería de Cultura, Educación e Universidade) y la Cátedra CAMELIA (USC-Plexus de IA aplicada a la
 Medicina Personalizada de Precisión).
 
-Los tamaños de esa banda se controlan con `\FundWA` / `\FundWB` / `\FundWC` / `\FundGap`, definidos al
-principio de `poster.tex`. Se expresan como fracciones de `\linewidth` a propósito: `baposter` compone la
-página a `fontscale=0.31` y la escala x3.23, así que una longitud en `cm` dentro del cuerpo **no** es la
-del A0 impreso.
+La fila ocupa el 100 % del ancho de la caja: los anchos `\FundWA` / `\FundWB` / `\FundWC` (definidos al
+principio de `poster.tex`) suman 0.93 y el 0.07 restante lo reparten dos `\hfill`, así que los logos quedan
+justificados a sangre entre los márgenes del cuerpo. Se expresan como fracciones de `\linewidth` a
+propósito: `baposter` compone la página a `fontscale=0.31` y la escala x3.23, así que una longitud en `cm`
+dentro del cuerpo **no** es la del A0 impreso.
+
+> **Pendiente:** `figures/logo3.png` (CAMELIA) es de 472x61 px. Al ancho al que se imprime queda a ~39 ppi
+> y se verá pixelado en el A0. Hace falta una versión vectorial (SVG/PDF/EPS) o un PNG de 4000 px de ancho.
 
 ## Licencia
 
