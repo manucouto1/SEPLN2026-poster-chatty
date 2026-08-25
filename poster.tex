@@ -50,6 +50,11 @@
 \newcommand{\AuthorsLine}{\normalsize\sffamily}
 \newcommand{\AffilLine}{\footnotesize\sffamily}
 
+% Loro Twemoji (U+1F99C) del paper. Es la página 2707 de all-twemojis.pdf del
+% paquete twemojis, extraída como PDF suelto para no depender del paquete.
+% Reflejado, igual que en el paper. Emojis (c) Twitter Inc. y otros, CC-BY 4.0.
+\newcommand{\parrotemoji}{\raisebox{-0.2em}{\reflectbox{\includegraphics[height=1.15em]{figures/parrot.pdf}}}}
+
 % Anchos de los logos de financiación (banda inferior), como fracción del ancho de
 % la caja. Ojo: baposter compone la página a fontscale=0.31 y la escala x3.23, así
 % que una longitud absoluta (cm) NO es la del A0 impreso; por eso se dimensionan en
@@ -150,7 +155,7 @@
   \makebox[\linewidth][l]{%
     \hspace{0.2cm}
     \parbox{1.0\linewidth}{\raggedright
-      {\TitleLineA Chatty:}\\[0.2em]
+      {\TitleLineA \parrotemoji\, Chatty:}\\[0.2em]
       {\TitleLineB A Tool for Building and Evaluating Customizable LLM Assistants}\\[0.4em]
       {\AuthorsLine Manuel Couto-Pintos, Marcos Fernández-Pichel, Mario Ezra Aragón, David Gallego-Conde, and David E. Losada}\\
       {\AffilLine Centro Singular de Investigación en Tecnoloxías Intelixentes (CiTIUS), Universidade de Santiago de Compostela (USC), Spain}\\

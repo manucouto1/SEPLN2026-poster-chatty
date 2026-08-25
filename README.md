@@ -18,7 +18,7 @@ El PDF compilado está en [`poster.pdf`](poster.pdf) (A0, vertical).
 | `poster.pdf` | PDF compilado (A0 vertical) |
 | `baposter.cls` | Clase de póster `baposter` |
 | `*.sty` | Paquetes locales (`multirow`, `soul`, `svg`, `wrapfig`) |
-| `figures/` | Figuras, gráficas, logos institucionales y de financiación, y códigos QR |
+| `figures/` | Figuras, gráficas, logos institucionales y de financiación, códigos QR y el loro del título |
 
 ## Compilación
 
@@ -63,3 +63,8 @@ dentro del cuerpo **no** es la del A0 impreso.
 
 Contenido del póster © los autores. El resto de archivos `.cls`/`.sty` conserva la licencia original de sus
 respectivos autores (LPPL).
+
+`figures/parrot.pdf` es el emoji de loro (U+1F99C) de [Twemoji](https://github.com/twitter/twemoji),
+© Twitter, Inc. y otros colaboradores, distribuido bajo
+[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/). Se extrajo del paquete `twemojis` de CTAN
+(página 2707 de `all-twemojis.pdf`) para no depender del paquete al compilar.
