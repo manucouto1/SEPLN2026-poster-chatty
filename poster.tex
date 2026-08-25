@@ -55,9 +55,25 @@
 % Reflejado, igual que en el paper. Emojis (c) Twitter Inc. y otros, CC-BY 4.0.
 % Separación entre el loro y la C de Chatty. Va en negativo porque el PDF del
 % emoji trae su propio margen transparente: con 0em el hueco sigue siendo ancho.
-% Referencia: -0.20em holgado, -0.35em pegado, -0.50em el pico toca la C.
-\newcommand{\ParrotGap}{-0.35em}
-\newcommand{\parrotemoji}{\raisebox{-0.2em}{\reflectbox{\includegraphics[height=1.15em]{figures/parrot.pdf}}}}
+% Con el loro delante (ver \ChattyTitle): -0.20em roza, -0.35em pico sobre la C,
+% -0.50em el loro monta sobre la C y sigue leyéndose, -0.65em la tapa casi entera.
+\newcommand{\ParrotGap}{-0.50em}
+\newcommand{\parrotemoji}{\raisebox{-0.25em}{\reflectbox{\includegraphics[height=1.15em]{figures/parrot.pdf}}}}
+
+% El título se compone en dos pasos para que el loro quede POR DELANTE de las
+% letras: primero se reserva su hueco y se escribe el texto, y después se repinta
+% el loro encima con \llap (ancho cero, así la línea conserva su anchura). En el
+% orden natural la C tapa al loro en cuanto \ParrotGap hace que se solapen.
+\newsavebox{\parrotbox}
+\newsavebox{\chattybox}
+\newcommand{\ChattyTitle}{%
+  \sbox{\parrotbox}{\parrotemoji}%
+  \sbox{\chattybox}{Chatty:}%
+  \kern\wd\parrotbox
+  \kern\ParrotGap
+  \usebox{\chattybox}%
+  \llap{\usebox{\parrotbox}\kern\dimexpr\ParrotGap+\wd\chattybox\relax}%
+}
 
 % Anchos de los logos de financiación (banda inferior), como fracción del ancho de
 % la caja. Ojo: baposter compone la página a fontscale=0.31 y la escala x3.23, así
@@ -159,7 +175,7 @@
   \makebox[\linewidth][l]{%
     \hspace{0.2cm}
     \parbox{1.0\linewidth}{\raggedright
-      {\TitleLineA \parrotemoji\hspace{\ParrotGap} Chatty:}\\[0.2em]
+      {\TitleLineA \ChattyTitle}\\[0.2em]
       {\TitleLineB A Tool for Building and Evaluating Customizable LLM Assistants}\\[0.4em]
       {\AuthorsLine Manuel Couto-Pintos, Marcos Fernández-Pichel, Mario Ezra Aragón, David Gallego-Conde, and David E. Losada}\\
       {\AffilLine Centro Singular de Investigación en Tecnoloxías Intelixentes (CiTIUS), Universidade de Santiago de Compostela (USC), Spain}\\
